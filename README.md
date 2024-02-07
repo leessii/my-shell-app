@@ -9,11 +9,11 @@ including autocompletion and input validation,
 ensuring a seamless and user-friendly experience. 
 Notably, the application offers two distinct implementations for the web client:
 
-###- Spring Boot Web Client:
+### Spring Boot Web Client:
 
 ```A native implementation utilizing the Spring Boot Web Client for making requests.```
 
-###- OpenAPI-Generated WebClient:
+### OpenAPI-Generated WebClient:
 
 ```Leveraging the OpenAPI generator to automatically generate a web client, enhancing flexibility and reducing development effort.```
 
