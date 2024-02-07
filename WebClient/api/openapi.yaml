@@ -1,0 +1,57 @@
+openapi: 3.0.1
+info:
+  description: A simple API for random events and events by type.
+  title: Random Event API
+  version: 1.0.0
+servers:
+- description: boredApi server
+  url: "https://www.boredapi.com:{port}/api"
+  variables:
+    port:
+      default: "443"
+      description: The server port
+paths:
+  /activity:
+    get:
+      parameters:
+      - description: The type of event to filter
+        explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          enum:
+          - education
+          - recreational
+          - social
+          - diy
+          - charity
+          - cooking
+          - relaxation
+          - music
+          - busywork
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                activity: Learn how to play a new sport
+                accessibility: 0.2
+                type: sports
+                participants: 1
+                price: 0.1
+                key: "5808228"
+          description: Successful response
+        "404":
+          content:
+            application/json:
+              example:
+                error: No activity found with the specified parameters
+          description: No activity found
+      summary: Get events by type
+      x-accepts: application/json
+components:
+  schemas: {}
+
