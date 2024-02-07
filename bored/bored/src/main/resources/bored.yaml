@@ -24,18 +24,6 @@ paths:
           schema:
             type: string
             enum: ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
-        - name: minprice
-          in: query
-          description: The minimum price of the event (between 0.0 and 1.0)
-          required: false
-          schema:
-            type: string
-        - name: maxprice
-          in: query
-          description: The maximum price of the event (between 0.0 and 1.0)
-          required: false
-          schema:
-            type: string
       responses:
         '200':
           description: Successful response
