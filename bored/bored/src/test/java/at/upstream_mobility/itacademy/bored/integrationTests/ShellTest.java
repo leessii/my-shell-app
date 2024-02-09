@@ -1,15 +1,13 @@
 package at.upstream_mobility.itacademy.bored.integrationTests;
 
-import at.upstream_mobility.itacademy.bored.client.BoredApiClient;
 import at.upstream_mobility.itacademy.bored.commands.ActivityCommands;
-import at.upstream_mobility.itacademy.bored.model.ActivityType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
+
 
 @SpringBootTest(properties = "spring.shell.interactive.enabled=false")
 class ShellTest {
@@ -32,11 +30,10 @@ class ShellTest {
         }
     }
 
-
     @Test
     public void test_shell_integration_no_activity_found() {
         // Arrange
-        String type = "not valued tye";
+        String type = "not valid tye";
         String expected = "Sorry, the activity with your parameters does not exist. Change filter parameters.";
 
         // Act
@@ -45,5 +42,4 @@ class ShellTest {
         // Assert
         assertEquals(expected, result);
     }
-
 }

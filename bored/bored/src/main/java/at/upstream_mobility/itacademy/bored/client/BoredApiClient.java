@@ -6,6 +6,7 @@ import org.springframework.web.service.annotation.GetExchange;
 import reactor.core.publisher.Mono;
 
 public interface BoredApiClient {
+    @GetExchange("/")
     Mono<ActivityResponse> getActivity(
             @RequestParam(required = false) String type
     );

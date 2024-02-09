@@ -1,8 +1,7 @@
 package at.upstream_mobility.itacademy.bored.commands;
 
 import at.upstream_mobility.itacademy.bored.client.BoredApiClient;
-import at.upstream_mobility.itacademy.bored.customValidation.ValidType;
-import jakarta.validation.constraints.Pattern;
+import at.upstream_mobility.itacademy.bored.customValidation.IsValidType;
 import org.openapitools.client.model.ActivityResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.shell.standard.ShellComponent;
@@ -25,16 +24,18 @@ public class ActivityCommands {
                     help = "Set activity type: [education, recreational, social, diy, charity, cooking, relaxation, music, busywork]",
                     valueProvider = ActivityTypeValueProvider.class
             )
-            @ValidType
+            @IsValidType
             String type
     ) {
         try {
             ActivityResponse response = boredApiClient.getActivity(type).block();
 
-            // Validation if the activity with the defined parameters exists
+            // Validation if the activity with the defined parameters does not exist
             if (response.getActivity() == null) {
                 return "Sorry, the activity with your parameters does not exist. Change filter parameters.";
             }
+
+            // Return the Activity
             return response.toString();
 
         } catch (Exception e) {

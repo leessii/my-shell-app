@@ -6,7 +6,7 @@ import jakarta.validation.ConstraintValidatorContext;
 
 import java.util.EnumSet;
 
-public class ValidTypeValidator implements ConstraintValidator<ValidType, String> {
+public class IsValidTypeValidator implements ConstraintValidator<IsValidType, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
         return value.isEmpty() || EnumSet.allOf(ActivityType.class)

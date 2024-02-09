@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 public class BoredWebClient implements BoredApiClient {
     private final WebClient client;
 
+    // Build the WebClient
     public BoredWebClient() {
         client = WebClient.builder()
                 .baseUrl("https://www.boredapi.com/api/activity")

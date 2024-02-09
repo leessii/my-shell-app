@@ -20,9 +20,8 @@ public class CustomExceptionHandler implements CommandExceptionResolver {
                             .stream()
                             .map(ConstraintViolation::getMessage)
                             .collect(Collectors.joining(" / "))
-                            +'\n');
+                            +'\n', 1);
         }
-        return CommandHandlingResult.of(ex.getMessage()+'\n', 1);
+        return CommandHandlingResult.of(ex.getMessage()+'\n', 0);
     }
-
 }

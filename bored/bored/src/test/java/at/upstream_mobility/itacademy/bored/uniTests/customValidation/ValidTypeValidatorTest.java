@@ -1,6 +1,6 @@
 package at.upstream_mobility.itacademy.bored.uniTests.customValidation;
 
-import at.upstream_mobility.itacademy.bored.customValidation.ValidTypeValidator;
+import at.upstream_mobility.itacademy.bored.customValidation.IsValidTypeValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,7 @@ class ValidTypeValidatorTest {
     @Mock
     private ConstraintValidatorContext constraintValidatorContext;
     @InjectMocks
-    private ValidTypeValidator validTypeValidator;
+    private IsValidTypeValidator validTypeValidator;
     private AutoCloseable closeable;
 
     @BeforeEach

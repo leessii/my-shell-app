@@ -11,6 +11,8 @@ import reactor.core.publisher.Mono;
 @Qualifier("genWebClient")
 public class GenWebClient implements BoredApiClient {
     private final DefaultApi defaultApi;
+
+    // Build the GenWebClient
     public GenWebClient() {
         ApiClient defaultClient = new ApiClient();
         defaultClient.setBasePath("https://www.boredapi.com/api");
@@ -20,7 +22,6 @@ public class GenWebClient implements BoredApiClient {
 
     @Override
     public Mono<ActivityResponse> getActivity(String type) {
-
         return defaultApi.activityGet(type);
     }
 }

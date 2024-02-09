@@ -10,8 +10,9 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidTypeValidator.class)
-public @interface ValidType {
+@Constraint(validatedBy = IsValidTypeValidator.class)
+public @interface IsValidType {
+
     String message() default "Please provide a valid Type: [education, recreational, social, diy, charity, cooking, relaxation, music, busywork].";
 
     Class<?>[] groups() default {};

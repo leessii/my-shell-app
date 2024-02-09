@@ -82,5 +82,4 @@ class ActivityCommandsTest {
         // Assert
         assertEquals(expected, result);
     }
-
 }
